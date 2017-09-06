@@ -10,7 +10,7 @@
         <meta name="description" content="Branch documentation for mobile deep linking">
       
       
-        <link rel="canonical" href="https://branchmetrics.github.io/docs/pages/links/integrate/">
+        <link rel="canonical" href="https://docs.branch.io/pages/links/integrate/">
       
       
         <meta name="author" content="Branch">
@@ -82,7 +82,7 @@
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <a href="https://branchmetrics.github.io/docs" title="Branch documentation" class="md-logo md-header-nav__button">
+          <a href="https://docs.branch.io" title="Branch documentation" class="md-logo md-header-nav__button">
             <img src="../../../img/logo.svg">
           </a>
         
@@ -92,7 +92,7 @@
       </div>
       
         <div class="md-flex__cell md-flex__cell--shrink">
-          <a href="https://branchmetrics.github.io/docs" title="Branch documentation">
+          <a href="https://docs.branch.io" title="Branch documentation">
             <div class="branch-header-subtitle">&nbsp;|&nbsp;Docs</div>
           </a>
         </div>
@@ -542,8 +542,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#open-website-instead-of-app" title="Open website instead of app" class="md-nav__link">
-    Open website instead of app
+  <a href="#open-web-instead-of-app" title="Open web instead of app" class="md-nav__link">
+    Open web instead of app
   </a>
   
 </li>
@@ -624,6 +624,13 @@
           <li class="md-nav__item">
   <a href="#redirections" title="Redirections" class="md-nav__link">
     Redirections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirection-errors" title="Redirection Errors" class="md-nav__link">
+    Redirection Errors
   </a>
   
 </li>
@@ -1707,8 +1714,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#open-website-instead-of-app" title="Open website instead of app" class="md-nav__link">
-    Open website instead of app
+  <a href="#open-web-instead-of-app" title="Open web instead of app" class="md-nav__link">
+    Open web instead of app
   </a>
   
 </li>
@@ -1789,6 +1796,13 @@
           <li class="md-nav__item">
   <a href="#redirections" title="Redirections" class="md-nav__link">
     Redirections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirection-errors" title="Redirection Errors" class="md-nav__link">
+    Redirection Errors
   </a>
   
 </li>
@@ -1952,7 +1966,7 @@
 </ul>
 </li>
 <li>
-<h5 id="open-website-instead-of-app">Open website instead of app<a class="headerlink" href="#open-website-instead-of-app" title="Permanent link">&para;</a></h5>
+<h5 id="open-web-instead-of-app">Open web instead of app<a class="headerlink" href="#open-web-instead-of-app" title="Permanent link">&para;</a></h5>
 <ul>
 <li>When app is not installed <ul>
 <li>Add query string <code>https://example.app.link?$ios_url=https://example.com</code></li>
@@ -2002,8 +2016,6 @@
 </li>
 <li>
 <h4 id="expected-redirect-behavior">Expected redirect behavior<a class="headerlink" href="#expected-redirect-behavior" title="Permanent link">&para;</a></h4>
-</li>
-</ul>
 <table>
 <thead>
 <tr>
@@ -2202,10 +2214,12 @@
 </tr>
 </tbody>
 </table>
+</li>
+</ul>
 <h2 id="create-deep-links">Create deep links<a class="headerlink" href="#create-deep-links" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<h3 id="short-links">Short links<a class="headerlink" href="#short-links" title="Permanent link">&para;</a></h3>
+<h4 id="short-links">Short links<a class="headerlink" href="#short-links" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Use <a href="../../../pages/dashboard/analytics/#quick-links">Quick Links</a> for fast link creation and easy tracking</li>
 <li>Use our <a href="#dialog-code">App SDK</a> to create and share links within your app</li>
@@ -2214,7 +2228,7 @@
 </ul>
 </li>
 <li>
-<h3 id="long-links">Long links<a class="headerlink" href="#long-links" title="Permanent link">&para;</a></h3>
+<h4 id="long-links">Long links<a class="headerlink" href="#long-links" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p>If you don't need a short link and care to avoid a network call, you can create links by appending query parameters to the Branch domain.</p>
@@ -2282,8 +2296,8 @@
 <li>
 <h4 id="analytical-labels">Analytical labels<a class="headerlink" href="#analytical-labels" title="Permanent link">&para;</a></h4>
 <ul>
-<li>These labels allow you to filter and organize your deep links</li>
-</ul>
+<li>
+<p>These labels allow you to filter and organize your deep links</p>
 <table>
 <thead>
 <tr>
@@ -2331,11 +2345,13 @@
 </tbody>
 </table>
 </li>
+</ul>
+</li>
 <li>
 <h4 id="custom-data">Custom data<a class="headerlink" href="#custom-data" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Pass any custom data to be read inside your app</li>
-</ul>
+<li>
+<p>Pass any custom data to be read inside your app</p>
 <table>
 <thead>
 <tr>
@@ -2373,12 +2389,14 @@
 </tbody>
 </table>
 </li>
+</ul>
+</li>
 <li>
 <h4 id="redirections">Redirections<a class="headerlink" href="#redirections" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Navigate to different locations based on device information</li>
-<li>Navigation URLs must be websites, not deep links</li>
-</ul>
+<li>
+<p>Navigation URLs must be websites, not deep links</p>
 <table>
 <thead>
 <tr>
@@ -2451,11 +2469,57 @@
 </tbody>
 </table>
 </li>
+</ul>
+</li>
+<li>
+<h4 id="redirection-errors">Redirection Errors<a class="headerlink" href="#redirection-errors" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Branch's linking philosophy is to never show an error message to the user, so in <a href="#expected-redirect-behavior">many cases</a>, we'd rather redirect to the App Store, Play Store or website even when the app is installed than risk showing an error message. You can control this using <code>$uri_redirect_mode</code> and setting the values as follows when you create a link or when you summon a banner.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$uri_redirect_mode</td>
+<td><strong>0</strong></td>
+<td>This is the default value that yields the standard behavior where we don't try to open the app if the user can see an error.</td>
+</tr>
+<tr>
+<td>$uri_redirect_mode</td>
+<td><strong>1</strong></td>
+<td>Smart redirect mode. Same behavior as 0 until we know the user has the app installed through Branch persona data. In that case, force URI schemes to open the app.</td>
+</tr>
+<tr>
+<td>$uri_redirect_mode</td>
+<td><strong>2</strong></td>
+<td>Forceful redirect mode. Always try to force open the app, even if it risks showing an error message when the app is not installed.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Apps/browsers that support deep linking with this forceful redirect mode:</p>
+<ul>
+<li>Facebook newsfeed iOS</li>
+<li>Instagram iOS</li>
+<li>Twitter iOS</li>
+<li>Safari iOS</li>
+<li>Firefox iOS &amp; Android</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>
 <h4 id="deep-linking">Deep linking<a class="headerlink" href="#deep-linking" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Navigate to different locations based on device information</li>
-</ul>
+<li>
+<p>Navigate to different locations based on device information</p>
 <table>
 <thead>
 <tr>
@@ -2517,50 +2581,14 @@
 </tr>
 </tbody>
 </table>
-<ul>
-<li>Force open the app with $uri_redirect_mode</li>
-</ul>
-<p>Branch's linking philosophy is to never show an error message to the user, so in <a href="#expected-redirect-behavior">many cases</a>, we'd rather redirect to the App Store, Play Store or website even when the app is installed than risk showing an error message. You can control this using <code>$uri_redirect_mode</code> and setting the values as follows when you create a link or when you summon a banner.</p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-<th>Usage</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$uri_redirect_mode</td>
-<td><strong>0</strong></td>
-<td>This is the default value that yields the standard behavior where we don't try to open the app if the user can see an error.</td>
-</tr>
-<tr>
-<td>$uri_redirect_mode</td>
-<td><strong>1</strong></td>
-<td>Smart redirect mode. Same behavior as 0 until we know the user has the app installed through Branch persona data. In that case, force URI schemes to open the app.</td>
-</tr>
-<tr>
-<td>$uri_redirect_mode</td>
-<td><strong>2</strong></td>
-<td>Forceful redirect mode. Always try to force open the app, even if it risks showing an error message when the app is not installed.</td>
-</tr>
-</tbody>
-</table>
-<p>Apps/browsers that support deep linking with this forceful redirect mode:</p>
-<ul>
-<li>Facebook newsfeed iOS</li>
-<li>Instagram iOS</li>
-<li>Twitter iOS</li>
-<li>Safari iOS</li>
-<li>Firefox iOS &amp; Android</li>
+</li>
 </ul>
 </li>
 <li>
 <h4 id="content">Content<a class="headerlink" href="#content" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Handle content properties</li>
-</ul>
+<li>
+<p>Handle content properties</p>
 <table>
 <thead>
 <tr>
@@ -2598,11 +2626,13 @@
 </tbody>
 </table>
 </li>
+</ul>
+</li>
 <li>
 <h4 id="deepview">DeepView<a class="headerlink" href="#deepview" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Enable / control <a href="../../../pages/web/deep-views/#active-deepviews">active deepview</a> properties</li>
-</ul>
+<li>
+<p>Enable / control <a href="../../../pages/web/deep-views/#active-deepviews">active deepview</a> properties</p>
 <table>
 <thead>
 <tr>
@@ -2629,9 +2659,9 @@
 </tr>
 </tbody>
 </table>
-<ul>
-<li>Control <a href="../../../pages/web/deep-views/#passive-deepviews">passive deepview</a> templates</li>
-</ul>
+</li>
+<li>
+<p>Control <a href="../../../pages/web/deep-views/#passive-deepviews">passive deepview</a> templates</p>
 <table>
 <thead>
 <tr>
@@ -2654,11 +2684,13 @@
 </tbody>
 </table>
 </li>
+</ul>
+</li>
 <li>
 <h4 id="open-graph">Open Graph<a class="headerlink" href="#open-graph" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Handle Facebook properties</li>
-</ul>
+<li>
+<p>Handle Facebook properties</p>
 <table>
 <thead>
 <tr>
@@ -2721,11 +2753,13 @@
 </tbody>
 </table>
 </li>
+</ul>
+</li>
 <li>
 <h4 id="twitter">Twitter<a class="headerlink" href="#twitter" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Handle Twitter properties</li>
-</ul>
+<li>
+<p>Handle Twitter properties</p>
 <table>
 <thead>
 <tr>
@@ -2783,11 +2817,13 @@
 </tbody>
 </table>
 </li>
+</ul>
+</li>
 <li>
 <h4 id="universal-object">Universal Object<a class="headerlink" href="#universal-object" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Properties for the Branch Universal Object within your <a href="#dialog-code">app</a> integration</li>
-</ul>
+<li>
+<p>Properties for the Branch Universal Object within your <a href="#dialog-code">app</a> integration</p>
 <table>
 <thead>
 <tr>
@@ -2854,8 +2890,10 @@
 </tr>
 </tbody>
 </table>
+</li>
+<li>
+<p>Best practices for the Branch Universal Object</p>
 <ul>
-<li>Best practices for the Branch Universal Object<ul>
 <li>Do<ul>
 <li>Set the <code>canonicalIdentifier</code> to a unique, de-duped value across instances of the app</li>
 <li>Ensure that the <code>title</code>, <code>contentDescription</code> and <code>imageUrl</code> properly represent the object</li>
@@ -2928,8 +2966,8 @@
 <li>
 <h4 id="reserved-prefixes">Reserved prefixes<a class="headerlink" href="#reserved-prefixes" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Branch adds additional properties to your deep link data to explain the link</li>
-</ul>
+<li>
+<p>Branch adds additional properties to your deep link data to explain the link</p>
 <table>
 <thead>
 <tr>
@@ -2953,11 +2991,13 @@
 </tbody>
 </table>
 </li>
+</ul>
+</li>
 <li>
 <h4 id="callback-values">Callback values<a class="headerlink" href="#callback-values" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Additional properties read from the <code>initSession</code> within your <a href="#dialog-code">app</a> and <a href="../../../pages/web/integrate/">website</a> integrations</li>
-</ul>
+<li>
+<p>Additional properties read from the <code>initSession</code> within your <a href="#dialog-code">app</a> and <a href="../../../pages/web/integrate/">website</a> integrations</p>
 <table>
 <thead>
 <tr>
@@ -3014,6 +3054,8 @@
 </tr>
 </tbody>
 </table>
+</li>
+</ul>
 </li>
 </ul>
 <h2 id="troubleshoot-issues">Troubleshoot issues<a class="headerlink" href="#troubleshoot-issues" title="Permanent link">&para;</a></h2>

@@ -10,7 +10,7 @@
         <meta name="description" content="Branch documentation for mobile deep linking">
       
       
-        <link rel="canonical" href="https://branchmetrics.github.io/docs/pages/apps/cordova-phonegap-ionic/">
+        <link rel="canonical" href="https://docs.branch.io/pages/apps/cordova-phonegap-ionic/">
       
       
         <meta name="author" content="Branch">
@@ -82,7 +82,7 @@
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <a href="https://branchmetrics.github.io/docs" title="Branch documentation" class="md-logo md-header-nav__button">
+          <a href="https://docs.branch.io" title="Branch documentation" class="md-logo md-header-nav__button">
             <img src="../../../img/logo.svg">
           </a>
         
@@ -92,7 +92,7 @@
       </div>
       
         <div class="md-flex__cell md-flex__cell--shrink">
-          <a href="https://branchmetrics.github.io/docs" title="Branch documentation">
+          <a href="https://docs.branch.io" title="Branch documentation">
             <div class="branch-header-subtitle">&nbsp;|&nbsp;Docs</div>
           </a>
         </div>
@@ -593,8 +593,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#incompatible-plugins" title="Incompatible plugins" class="md-nav__link">
-    Incompatible plugins
+  <a href="#incompatibilities" title="Incompatibilities" class="md-nav__link">
+    Incompatibilities
   </a>
   
 </li>
@@ -1923,8 +1923,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#incompatible-plugins" title="Incompatible plugins" class="md-nav__link">
-    Incompatible plugins
+  <a href="#incompatibilities" title="Incompatibilities" class="md-nav__link">
+    Incompatibilities
   </a>
   
 </li>
@@ -3563,7 +3563,7 @@ cordova plugin remove branch-cordova-sdk
 </ul>
 </li>
 <li>
-<h4 id="incompatible-plugins">Incompatible plugins<a class="headerlink" href="#incompatible-plugins" title="Permanent link">&para;</a></h4>
+<h4 id="incompatibilities">Incompatibilities<a class="headerlink" href="#incompatibilities" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p>The following plugins will not work with the Branch SDK</p>
@@ -3581,6 +3581,9 @@ cordova plugin remove branch-cordova-sdk
 <p><a href="https://github.com/driftyco/ionic-plugin-deeplinks">Ionic Deeplinks Plugin</a></p>
 </li>
 </ul>
+</li>
+<li>
+<p>PhoneGap Build is also not supported by the Branch SDK because we need plugin hooks to enable Entitlements, Universal Links, App Links, and URI Scheme redirects but PhoneGap Build does not allow plugin hooks</p>
 </li>
 </ul>
 </li>
