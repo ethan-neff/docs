@@ -10,7 +10,7 @@ source: facebook-traffic-conversion-ads.md
 
 Branch links can be used together with Facebook Traffic and Conversion ads, allowing you to track engagement with your advertisements and ad-driven installs which deep link new users directly to content the first time they open your app.
 
-Note: This documentation applies for Ad placements across Facebook, Instagram, and the Audience Network.
+Note: This documentation applies for Ad placements across Facebook and the Audience Network.
 
 This documentation supports the following Facebook Ad Campaign types:
 
