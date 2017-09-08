@@ -10,7 +10,7 @@ source: facebook-dynamic-ads.md
 
 Branch links can be used in conjunction with Facebook's dynamic advertisements. Dynamic remarketing campaigns on desktop have been proven to deliver 16x return on ad spend. Now you can easily set up Facebook Dynamic Ads on mobile to drive incredible results.
 
-Note: This documentation applies for Ad placements across Facebook, Instagram, and the Audience Network.
+Note: This documentation applies for Ad placements across Facebook and the Audience Network.
 
 This documentation supports the following Facebook Ad Campaign types:
 
