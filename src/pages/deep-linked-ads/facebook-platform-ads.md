@@ -10,7 +10,7 @@ source: facebook-platform-ads.md
 
 Branch links can be used together with a variety of Facebook ads, allowing you to track ad performance on the Branch dashboard and to deep link new users from ad-driven installs directly to content the first time they open your app.
 
-Note: This documentation applies for Ad placements across Facebook, Instagram, and the Audience Network.
+Note: This documentation applies for Ad placements across Facebook and the Audience Network.
 
 This documentation supports the following Facebook Ad Campaign types:
 
