@@ -2301,7 +2301,7 @@
 <p>In this prompt, enter the email of someone on your team who is qualified to modify your iOS app, and then click <strong>Send</strong>. They will complete the <a href="#technical-setup">technical setup</a> steps below.</p>
 <h3 id="technical-setup">Technical setup<a class="headerlink" href="#technical-setup" title="Permanent link">&para;</a></h3>
 <p>The following app changes ensure that your email integration supports <a href="../../../getting-started/universal-app-links/">Universal Links</a>. You will need access to your app code to make these changes.</p>
-<p>You should have <a href="#configure-your-app-for-your-click-tracking-domain">received an email from Branch</a> with your Sendgrid click tracking domain. If not, likely you or someone on your team still needs to complete the <a href="https://dashboard.branch.io/email" target="_blank">Deep Linked Email setup flow</a>.</p>
+<p>You should have <a href="#configure-your-app-for-your-click-tracking-domain">received an email from Branch</a> with your ESP's click tracking domain. If not, likely you or someone on your team still needs to complete the <a href="https://dashboard.branch.io/email" target="_blank">Deep Linked Email setup flow</a>.</p>
 <div class="admonition protip">
 <p class="admonition-title">How does it work?</p>
 <p>Apple recognizes the click tracking domain as a Universal Link, and opens the app immediately without the browser opening. Once the app has opened, Branch will collect the referring URL that opened the app (at this time, it will be the click tracking url). Inside the app, Branch will robotically “click” the link, registering the click with the ESP, and returning the Branch link information to the Branch SDK inside the app. This information is then used to deep link the user to the correct in-app content. See the <a href="#support">Support</a> section for more information.</p>
@@ -2314,7 +2314,7 @@
 <ol>
 <li>In Xcode, go to the <code>Capabilities</code> tab of your project file.</li>
 <li>Scroll down and enable <code>Associated Domains</code> if it is not already enabled. <img alt="image" src="../../../img/pages/email/enable-associated-domains.png" /></li>
-<li>Copy your click tracking domain from the <a href="#configure-your-app-for-your-click-tracking-domain">email you received from Branch</a>, or retrieve it from your Sendgrid settings.</li>
+<li>Copy your click tracking domain from the <a href="#configure-your-app-for-your-click-tracking-domain">email you received from Branch</a>, or retrieve it from your ESP's settings.</li>
 <li>In the <code>Domains</code> section, click the <code>+</code> icon and add your click tracking domain. For example, if your click tracking domain is <code>email.example.com</code>, add an entry for <code>applinks:email.example.com</code>.
 <img alt="image" src="../../../img/pages/email/add-domain.png" /></li>
 </ol>
@@ -2472,7 +2472,7 @@
 <tr>
 <td>Click Tracking URL</td>
 <td><a href="https://email.shop.com/click/abcde12345">https://email.shop.com/click/abcde12345</a></td>
-<td>A SendGrid generated click tracking URL. The URL doesn’t signify anything, but when clicked, records the click and redirects to a given destination.</td>
+<td>An ESP generated click tracking URL. The URL doesn’t signify anything, but when clicked, records the click and redirects to a given destination.</td>
 </tr>
 </tbody>
 </table>
