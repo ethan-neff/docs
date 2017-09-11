@@ -1415,6 +1415,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#universal-link-validator" title="Universal Link Validator" class="md-nav__link">
+    Universal Link Validator
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-script" title="Running the script" class="md-nav__link">
+    Running the script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
     </ul>
@@ -1479,6 +1506,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#universal-link-validator" title="Universal Link Validator" class="md-nav__link">
+    Universal Link Validator
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-script" title="Running the script" class="md-nav__link">
+    Running the script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
     </ul>
@@ -1502,6 +1556,37 @@
 <p>In case you need to validate your domain, use the <a href="https://branch.io/resources/aasa-validator/">AASA Validator</a> to check universal linking is set up properly.</p>
 <h2 id="app-indexing-validator">App Indexing Validator<a class="headerlink" href="#app-indexing-validator" title="Permanent link">&para;</a></h2>
 <p>Check your app to see if it can properly index and surface content for Firebase through our <a href="https://branch.io/resources/app-indexing/">App Indexing Validator</a>.</p>
+<h2 id="universal-link-validator">Universal Link Validator<a class="headerlink" href="#universal-link-validator" title="Permanent link">&para;</a></h2>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
+<p>The Universal Link Validator compares an app’s local project settings to its dashboard settings and helps pinpoint errors that may prevent Universal Links from functioning properly. This service verifies that:</p>
+<ul>
+<li>the entries in the project’s .entitlements file are correct</li>
+<li>the entries in the project’s info.plist file are correct</li>
+<li>the .entitlements file has the correct build target selected</li>
+<li>the Apple App Prefix on the Dashboard matches the Apple Developer ID specified for the project</li>
+</ul>
+<h3 id="running-the-script">Running the script<a class="headerlink" href="#running-the-script" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Download and extract the <a href="https://branch.io/resources/universal-links/static/twigScript/ulv_script.sh">script</a></li>
+<li>
+<p>Execute the script with the path to your .xcodeproj file</p>
+<div class="codehilite"><pre><span></span>bash ulv_script.sh /Users/jbauer/Desktop/BranchStuff/Branch-TestBed-Swift/TestBed-Swift.xcodeproj<span class="sb">`</span>
+</pre></div>
+
+</li>
+<li>
+<p>Upon execution, the script will return</p>
+<div class="codehilite"><pre><span></span><span class="c1">#####################################################</span>
+ Click the link generated to <span class="nb">test</span> your configuration
+<span class="c1">#####################################################</span>
+<span class="o">{</span><span class="s2">&quot;url&quot;</span>:<span class="s2">&quot;https://ulv.app.link/RPyaHjpYJd&quot;</span><span class="o">}</span>
+</pre></div>
+
+</li>
+<li>
+<p>Clicking the generated link, or copying &amp; pasting it into a browser, will open the validator and display the test results.</p>
+</li>
+</ol>
                 
                   
                 
