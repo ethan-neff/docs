@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Branch Deep Linking\n\n\n\n\nURLs can navigate to your website, but not to your app. \n\n\nBranch deep links allow users to install, open, and navigate to content inside your app.\n\n\nBranch increases discovery of your app by sharing its content, converting web users to app users, enabling user-to-user sharing, personalizing user experiences, tracking users, tracking referrals, tracking campaigns, tracking conversions, and increasing overall engagement.", 
+            "text": "Branch Deep Linking\n\n\n\n\nURLs can navigate to your website, but not to your apps. \n\n\nBranch deep links allow users to install, open, and navigate to content inside your app.\n\n\nBranch increases discovery of your app by sharing its content, converting web users to app users, enabling user-to-user sharing, personalizing user experiences, tracking users, tracking referrals, tracking campaigns, tracking conversions, and increasing overall engagement.", 
             "title": "Getting started"
         }, 
         {
             "location": "/#branch-deep-linking", 
-            "text": "URLs can navigate to your website, but not to your app.   Branch deep links allow users to install, open, and navigate to content inside your app.  Branch increases discovery of your app by sharing its content, converting web users to app users, enabling user-to-user sharing, personalizing user experiences, tracking users, tracking referrals, tracking campaigns, tracking conversions, and increasing overall engagement.", 
+            "text": "URLs can navigate to your website, but not to your apps.   Branch deep links allow users to install, open, and navigate to content inside your app.  Branch increases discovery of your app by sharing its content, converting web users to app users, enabling user-to-user sharing, personalizing user experiences, tracking users, tracking referrals, tracking campaigns, tracking conversions, and increasing overall engagement.", 
             "title": "Branch Deep Linking"
         }, 
         {
