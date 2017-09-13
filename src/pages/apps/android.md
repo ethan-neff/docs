@@ -1022,7 +1022,7 @@
         }   
         ```    
 
-- #### Deep link routing
+- #### Deep link routing with $deeplink_path
 
     - Loads a specific URI Scheme path, for example
         - `$deeplink_path="content/123"`
@@ -1032,6 +1032,114 @@
 
         ```xml
         <meta-data android:name="io.branch.sdk.auto_link_path" android:value="content/123/, another/path/, another/path/*" />
+        ```
+
+- #### Deep link routing in app 
+
+    - Used for WebView and ChromeTab within the app to render HTML normally
+
+    - Branch links within the WebView will route internally within your app, while other contents will continue to route externally
+
+    - Init your WebView and set the WebViewClient to `BranchWebViewController`
+
+        - *Java*
+
+            ```java
+            @Override
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.activity_main);
+                WebView webView = (WebView) findViewById(R.id.webView);
+                webView.setWebViewClient(new BranchWebViewController(YOUR_DOMAIN, MainActivity.class)); //YOUR_DOMAIN example: appname.app.link
+                webView.loadUrl(URL_TO_LOAD);
+            }
+
+            public class BranchWebViewController extends WebViewClient {
+
+                private String myDomain_;
+                private Class activityToLaunch_;
+
+                BranchWebViewController(@NonNull String myDomain, Class activityToLaunch) {
+                    myDomain_ = myDomain;
+                    activityToLaunch_ = activityToLaunch;
+                }
+
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    String url = request.getUrl().toString();
+
+                    if (url.contains(myDomain_)) {
+                        Intent i = new Intent(view.getContext(), activityToLaunch_);
+                        i.putExtra("branch", url);
+                        i.putExtra("branch_force_new_session", true);
+                        startActivity(i);
+                        //finish(); if launching same activity
+                    } else {
+                        view.loadUrl(url);
+                    }
+
+                    return true;
+                }
+            }
+            ```
+
+        - *Kotlin*
+
+            ```java
+            override fun onCreate(savedInstanceState: Bundle?) {
+                super.onCreate(savedInstanceState)
+                setContentView(R.layout.activity_main)
+                val webView = findViewById(R.id.webView) as WebView
+                webView!!.webViewClient = BranchWebViewController("appname.app.link", MainActivity2::class.java)
+                webView!!.loadUrl(URL_TO_LOAD)
+            }
+
+            inner class BranchWebViewController internal constructor(private val myDomain_: String, private val activityToLaunch_: Class<*>) : WebViewClient() {
+
+                override fun onLoadResource(view: WebView, url: String) {
+                    super.onLoadResource(view, url)
+                }
+
+                override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
+                    val url = request.url.toString()
+
+                    if (url.contains(myDomain_)) {
+                        val i = Intent(view.context, activityToLaunch_)
+                        i.putExtra("branch", url)
+                        i.putExtra("branch_force_new_session", true)
+                  //finish(); if launching same activity
+                        startActivity(i)
+                    } else {
+                        view.loadUrl(url)
+                    }
+
+                    return true
+                }
+            }
+            ```
+
+    - Launch Branch deep links with Chrome Tabs
+
+    - *Java*
+
+        ```java
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+        CustomTabsIntent customTabsIntent = builder.build();
+        customTabsIntent.intent.putExtra("branch", BRANCH_LINK_TO_LOAD);
+        customTabsIntent.intent.putExtra("branch_force_new_session", true);
+        customTabsIntent.launchUrl(MainActivity.this, Uri.parse(BRANCH_LINK_TO_LOAD));
+        //finish(); if launching same activity
+        ```
+
+    - *Kotlin*
+
+        ```java
+        val builder = CustomTabsIntent.Builder()
+        val customTabsIntent = builder.build()
+        customTabsIntent.intent.putExtra("branch", BRANCH_LINK_TO_LOAD)
+        customTabsIntent.intent.putExtra("branch_force_new_session", true)
+        customTabsIntent.launchUrl(this@MainActivity2, Uri.parse(BRANCH_LINK_TO_LOAD))
+        //finish() if launching same activity
         ```
 
 - #### Deep link activity finishes
