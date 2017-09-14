@@ -1603,7 +1603,7 @@
 <li><strong>The email addresses of any SSO admins</strong> that will be allowed to configure SAML for your team. These SSO admins will also be allowed to log in both via SSO and via regular dashboard login after SSO is enabled, so that you have a fallback option to gain access to your account if the configuration goes wrong in some way.</li>
 </ol>
 <h3 id="add-branch-to-your-identity-provider">Add Branch to your identity provider<a class="headerlink" href="#add-branch-to-your-identity-provider" title="Permanent link">&para;</a></h3>
-<p>If you want your Atlassian application to provide SSO, You will need to add Branch to your IdP. Once this is complete, your IdP will provide you with details that you'll need to add to the Branch dashboard in order to enable SSO.</p>
+<p>If you want the dashboard to provide SSO for your team, You will need to add Branch to your IdP. Once this is complete, your IdP will provide you with details that you'll need to add to the Branch dashboard in order to enable SSO.</p>
 <p>Branch currently works with Okta and OneLogin, and should also be compatible with any identity provider that supports SAML. </p>
 <p>When you add Branch to your identity provider, add the following SAML attribute mappings:</p>
 <table>
@@ -1628,7 +1628,34 @@
 </tr>
 </tbody>
 </table>
-<p>For IdP initiated SAML, enter your site's URL as the default relay state. Include https:// as part of your site's URL.</p>
+<p>Here is some initial information that your IdP might ask for:</p>
+<table>
+<thead>
+<tr>
+<th>IdP Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Platform</td>
+<td>Web</td>
+</tr>
+<tr>
+<td>Sign-on method</td>
+<td>SAML 2.0</td>
+</tr>
+<tr>
+<td>Application name</td>
+<td>Branch</td>
+</tr>
+<tr>
+<td>Logo</td>
+<td><a href="https://branch.io/press/#kit" target="_blank">Download here</a></td>
+</tr>
+</tbody>
+</table>
+<p>Ask your account manager or <a href="https://support.branch.io/support/tickets/new" target="_blank">support</a> for the additional configuration information that you need.</p>
 <h3 id="copy-your-details-back-to-branch">Copy your details back to Branch<a class="headerlink" href="#copy-your-details-back-to-branch" title="Permanent link">&para;</a></h3>
 <p>When you have added Branch, your IdP should provide you with an <strong>Identity provider Entity ID</strong>, an <strong>Identity provider SSO URL</strong>, and a <strong>Public x509 certificate</strong>. Go to <a href="https://dashboard.branch.io/account-settings/sso" target="_blank">Account Settings &gt; SSO</a> and paste in the information:</p>
 <p><img alt="image" src="../../../img/pages/dashboard/sso/configure-saml.png" /></p>
