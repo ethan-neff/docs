@@ -2509,7 +2509,20 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </li>
 <li>
 <p><em>Objective C</em></p>
-<div class="codehilite"><pre><span></span>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">initSessionWithLaunchOptions</span><span class="p">:</span><span class="n">launchOptions</span>
+                        <span class="nl">andRegisterDeepLinkHandler</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">params</span><span class="p">,</span>
+                                                     <span class="bp">NSError</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//Referring params</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Referring link params %@&quot;</span><span class="p">,</span><span class="n">params</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
+
+<span class="c1">// latest</span>
+<span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">sessionParams</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">getLatestReferringParams</span><span class="p">];</span>
+
+<span class="c1">// first</span>
+<span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">installParams</span> <span class="o">=</span>  <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">getFirstReferringParams</span><span class="p">];</span>
 </pre></div>
 
 </li>
@@ -2669,6 +2682,13 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 <li>
 <p><em>Objective-C</em></p>
 <div class="codehilite"><pre><span></span><span class="c1">// option 1</span>
+<span class="bp">NSString</span> <span class="o">*</span><span class="n">action</span> <span class="o">=</span> <span class="s">@&quot;signup&quot;</span><span class="p">;</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">userCompletedAction</span><span class="p">:</span><span class="n">action</span><span class="p">];</span>
+
+<span class="c1">// option 2</span>
+<span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">metadata</span> <span class="o">=</span> <span class="l">@{</span><span class="s">@&quot;custom_dictionary&quot;</span><span class="o">:</span><span class="mi">@123</span><span class="p">,</span> <span class="s">@&quot;anything&quot;</span><span class="o">:</span> <span class="s">@&quot;everything&quot;</span><span class="l">}</span><span class="p">;</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">userCompletedAction</span><span class="p">:</span><span class="n">action</span>
+                                <span class="nl">withState</span><span class="p">:</span><span class="n">metadata</span><span class="p">];</span>
 </pre></div>
 
 </li>
@@ -2734,7 +2754,46 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </li>
 <li>
 <p><em>Objective C</em></p>
-<div class="codehilite"><pre><span></span>
+<div class="codehilite"><pre><span></span> <span class="c1">// only revenue is required</span>
+<span class="n">BNCCommerceEvent</span> <span class="o">*</span><span class="n">commerceEvent</span> <span class="o">=</span> <span class="p">[</span><span class="n">BNCCommerceEvent</span> <span class="n">new</span><span class="p">];</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">affiliation</span> <span class="o">=</span> <span class="s">@&quot;affiliation&quot;</span><span class="p">;</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">coupon</span> <span class="o">=</span> <span class="s">@&quot;coupon&quot;</span><span class="p">;</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">currency</span> <span class="o">=</span> <span class="s">@&quot;USD&quot;</span><span class="p">;</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">transactionID</span> <span class="o">=</span> <span class="s">@&quot;transactionID&quot;</span><span class="p">;</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">shipping</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">11.22</span><span class="p">];</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">99.99</span><span class="p">];</span>
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">tax</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">4.2</span><span class="p">];;</span>
+
+<span class="c1">// optional</span>
+<span class="n">BNCProduct</span> <span class="o">*</span><span class="n">product1</span> <span class="o">=</span> <span class="p">[</span><span class="n">BNCProduct</span> <span class="n">new</span><span class="p">];</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">sku</span> <span class="o">=</span> <span class="s">@&quot;sku1&quot;</span><span class="p">;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">@&quot;name1&quot;</span><span class="p">;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">price</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">11.11</span><span class="p">];</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">1.0</span><span class="p">];</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">brand</span> <span class="o">=</span> <span class="s">@&quot;brand1&quot;</span><span class="p">;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">category</span> <span class="o">=</span> <span class="s">@&quot;category1&quot;</span><span class="p">;</span>
+<span class="n">product1</span><span class="p">.</span><span class="n">variant</span> <span class="o">=</span> <span class="s">@&quot;variant1&quot;</span><span class="p">;</span>
+
+<span class="c1">// optional</span>
+<span class="n">BNCProduct</span> <span class="o">*</span><span class="n">product2</span> <span class="o">=</span> <span class="p">[</span><span class="n">BNCProduct</span> <span class="n">new</span><span class="p">];</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">sku</span> <span class="o">=</span> <span class="s">@&quot;sku2&quot;</span><span class="p">;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">@&quot;name2&quot;</span><span class="p">;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">price</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">22.22</span><span class="p">];</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSDecimalNumber</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFloat</span><span class="p">:</span><span class="mf">2.0</span><span class="p">];</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">brand</span> <span class="o">=</span> <span class="s">@&quot;brand2&quot;</span><span class="p">;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">category</span> <span class="o">=</span> <span class="s">@&quot;category2&quot;</span><span class="p">;</span>
+<span class="n">product2</span><span class="p">.</span><span class="n">variant</span> <span class="o">=</span> <span class="s">@&quot;variant2&quot;</span><span class="p">;</span>
+
+<span class="n">commerceEvent</span><span class="p">.</span><span class="n">products</span> <span class="o">=</span> <span class="l">@[</span><span class="n">product1</span><span class="p">,</span> <span class="n">product2</span><span class="l">]</span><span class="p">;</span>
+
+<span class="c1">// optional</span>
+<span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">metadata</span> <span class="o">=</span> <span class="l">@{</span><span class="s">@&quot;custom_dictionary&quot;</span><span class="o">:</span><span class="mi">@123</span><span class="p">,</span>
+                       <span class="s">@&quot;anything&quot;</span><span class="o">:</span> <span class="s">@&quot;everything&quot;</span><span class="l">}</span><span class="p">;</span>
+
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">sendCommerceEvent</span><span class="p">:</span><span class="n">commerceEvent</span> <span class="nl">metadata</span><span class="p">:</span><span class="n">metadata</span>
+                     <span class="nl">withCompletion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span><span class="n">response</span><span class="p">);</span>
+<span class="p">}];</span>
 </pre></div>
 
 </li>
@@ -2772,7 +2831,13 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </li>
 <li>
 <p><em>Objective C</em></p>
-<div class="codehilite"><pre><span></span>
+<div class="codehilite"><pre><span></span><span class="c1">// option 1 (default bucket)</span>
+<span class="n">NSInteger</span> <span class="n">amount</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">redeemRewards</span><span class="p">:</span><span class="n">amount</span><span class="p">];</span>
+
+<span class="c1">// option 2</span>
+<span class="bp">NSString</span> <span class="o">*</span><span class="n">bucket</span> <span class="o">=</span> <span class="s">@&quot;signup&quot;</span><span class="p">;</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">redeemRewards</span><span class="p">:</span><span class="n">amount</span> <span class="nl">forBucket</span><span class="p">:</span><span class="n">bucket</span><span class="p">];</span>
 </pre></div>
 
 </li>
@@ -2796,7 +2861,16 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </li>
 <li>
 <p><em>Objective C</em></p>
-<div class="codehilite"><pre><span></span>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">loadRewardsWithCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="kt">BOOL</span> <span class="n">changed</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">changed</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// option 1 (defualt bucket)</span>
+    <span class="n">NSInteger</span> <span class="n">credits</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">getCredits</span><span class="p">];</span>
+
+    <span class="c1">// option 2</span>
+    <span class="bp">NSString</span> <span class="o">*</span><span class="n">bucket</span> <span class="o">=</span> <span class="s">@&quot;signup&quot;</span><span class="p">;</span>
+    <span class="n">NSInteger</span> <span class="n">credit</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">getCreditsForBucket</span><span class="p">:</span><span class="n">bucket</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}];</span>
 </pre></div>
 
 </li>
@@ -2815,7 +2889,9 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </li>
 <li>
 <p><em>Objective C</em></p>
-<div class="codehilite"><pre><span></span>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">getCreditHistoryWithCallback</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSArray</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">creditHistory</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span> <span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span><span class="n">creditHistory</span><span class="p">);</span>
+<span class="p">}];</span>
 </pre></div>
 
 </li>
@@ -2872,7 +2948,7 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </li>
 <li>
 <p><em>Objective C</em></p>
-<div class="codehilite"><pre><span></span>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">delayInitToCheckForSearchAds</span><span class="p">];</span>
 </pre></div>
 
 </li>
@@ -2887,7 +2963,7 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </li>
 <li>
 <p><em>Objective C</em></p>
-<div class="codehilite"><pre><span></span>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">setAppleSearchAdsDebugMode</span><span class="p">];</span>
 </pre></div>
 
 </li>
@@ -3076,7 +3152,7 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </li>
 <li>
 <p><em>Objective C</em></p>
-<div class="codehilite"><pre><span></span>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">setDebug</span><span class="p">];</span>
 </pre></div>
 
 </li>
@@ -3151,7 +3227,9 @@ target <span class="s1">&#39;APP_NAME&#39;</span> <span class="k">do</span>
 </li>
 <li>
 <p><em>Objective C</em></p>
-<div class="codehilite"><pre><span></span>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">registerDeepLinkController</span><span class="p">:</span><span class="n">customViewController</span>
+                                          <span class="nl">forKey</span><span class="p">:</span><span class="s">@&quot;my-key&quot;</span>
+                                <span class="nl">withPresentation</span><span class="p">:</span><span class="n">BNCViewControllerOptionShow</span><span class="p">];</span>
 </pre></div>
 
 </li>
