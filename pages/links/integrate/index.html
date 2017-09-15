@@ -1990,13 +1990,13 @@
 <ul>
 <li>Add link data from <a href="#configure-deep-links">Configuring deep links</a></li>
 <li>Add key-values pairs from <a href="../../../pages/dashboard/analytics/#quick-links">Quick Links</a></li>
-<li>Add query string <code>https://example.app.link/fzmLEhobLD?$custom_data=123</code> </li>
+<li>Add query string <code>https://example.app.link/fzmLEhobLD?$custom_data=123</code></li>
 </ul>
 </li>
 <li>
 <h5 id="open-web-instead-of-app">Open web instead of app<a class="headerlink" href="#open-web-instead-of-app" title="Permanent link">&para;</a></h5>
 <ul>
-<li>When app is not installed <ul>
+<li>When app is not installed<ul>
 <li>Add query string <code>https://example.app.link?$ios_url=https://example.com</code></li>
 <li>Add link data <code>$ios_url = 'https://example.com'</code> (<a href="../../../pages/links/integrate/#redirections">docs</a>)</li>
 <li>Add link data <code>$fallback_url = 'https://example.com'</code> (<a href="../../../pages/links/integrate/#redirections">docs</a>)</li>
@@ -2438,6 +2438,11 @@
 <td>$fallback_url</td>
 <td></td>
 <td>Change the redirect endpoint for all platforms - so you don't have to enable it by platform. Note that Branch will forward all robots to this URL, which <strong>overrides any OG tags</strong> entered in the link.  System-wide Default URL (set in Link Settings)</td>
+</tr>
+<tr>
+<td>$fallback_url_xx</td>
+<td></td>
+<td>Change the redirect endpoint at the country level. Conforms to <a href="https://www.iso.org/obp/ui/#search">ISO 3166</a> country code standard. Example: <code>$fallback_url_de</code> would have a different redirect for people clicking in Germany.</td>
 </tr>
 <tr>
 <td>$desktop_url</td>
