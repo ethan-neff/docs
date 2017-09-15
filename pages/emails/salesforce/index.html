@@ -2339,7 +2339,9 @@
 
 <div class="admonition protip">
 <p class="admonition-title">Do not open the app</p>
-<p>Salesforce has communicated to us that in a future release customers will have the ability to choose not to open the app at all rather than open the app and launch a browser. While it is slated for 2017, there is no confirmed timeline. Salesforce Marketing Cloud uses this feature for your Unsubscribe button by default.</p>
+<p>If you want any web-only links to not open the app on iOS, Salesforce has a special attribute that you can apply to these links.</p>
+<p>Add <code>mc-deep-link="false"</code> to your link tag like this:</p>
+<p><code>&lt;a mc-deep-link="false" href="https://my.app.link/3p?$3p=e_et&amp;$original_url=..." &gt;This link will not open the app.&lt;/a&gt;</code></p>
 </div>
 <h3 id="validate-and-test">Validate and test<a class="headerlink" href="#validate-and-test" title="Permanent link">&para;</a></h3>
 <p><img alt="image" src="../../../img/pages/email/validate-test.png" /></p>
