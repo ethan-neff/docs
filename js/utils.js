@@ -9,7 +9,13 @@ var utils = (function() {
     if (!results || !results[2]) return null;
     return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
+  function waitForPageLoad(callback) {
+    window.onload = function () {
+      callback();
+    }
+  }
   return {
-    readQueryString: readQueryString
+    readQueryString: readQueryString,
+    waitForPageLoad: waitForPageLoad
   };
 })();

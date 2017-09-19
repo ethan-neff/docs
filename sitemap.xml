@@ -10,19 +10,11 @@
     
 
     
-        
     <url>
      <loc>https://docs.branch.io/pages/dashboard/integrate/</loc>
      <lastmod>2017-09-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    <url>
-     <loc>https://docs.branch.io/pages/dashboard/sso/</loc>
-     <lastmod>2017-09-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
     
 
     
@@ -141,6 +133,12 @@
         
     <url>
      <loc>https://docs.branch.io/pages/web/text-me-the-app/</loc>
+     <lastmod>2017-09-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://docs.branch.io/pages/web/hosted-data/</loc>
      <lastmod>2017-09-19</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -469,6 +467,14 @@
      <changefreq>daily</changefreq>
     </url>
         
+    
+
+    
+    <url>
+     <loc>https://docs.branch.io/pages/dashboard/sso/</loc>
+     <lastmod>2017-09-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
     
 
     
