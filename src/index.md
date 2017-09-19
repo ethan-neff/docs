@@ -1,6 +1,6 @@
 ## Branch Deep Linking
 
-- URLs can navigate to your website, but not to your app. 
+- URLs can navigate to your website, but not to your app. gross 
 - Branch `deep links` allow users to install, open, and navigate to content inside your app.
 - Branch increases discovery of your app by sharing its content, converting web users to app users, enabling user-to-user sharing, personalizing user experiences, tracking users, tracking referrals, tracking campaigns, tracking conversions, and increasing overall engagement.
 
