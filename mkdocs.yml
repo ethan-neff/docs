@@ -200,7 +200,7 @@ pages:
     - Export API: pages/exports/api.md
     - Webhooks: pages/exports/webhooks.md
   - Send data to other tools:
-    - Abobe Analytics: pages/integrations/adobe-analytics.md
+    - Adobe Analytics: pages/integrations/adobe-analytics.md
     - Adjust: pages/integrations/adjust.md
     - Amplitude: pages/integrations/amplitude.md
     - AppMetrica: pages/integrations/appmetrica.md
